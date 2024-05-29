@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<Configuration status="INFO"> Primera configuracion!
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        <File name="File" fileName="log.txt">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file"/>
+        </Root>
+        <Logger name="org.example" level="miLogLevel">
+            <AppenderRef ref="miAppender" />
+        </Logger>
+    </Loggers>
+</Configuration>-->
+<!--<Configuration status="WARN"> Configuracion con salida en formato HMTL!
+<Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+        <HTMLLayout>
+        </HTMLLayout>
+    </Console>
+</Appenders>
+<Loggers>
+    <Root level="info">
+        <AppenderRef ref="Console"/>
+    </Root>
+</Loggers>
+</Configuration>-->
+<!--Configuracion para rotar cada dos minutos el archivo-->
+<!--<Configuration status="WARN">
+    <Appenders>
+        <RollingFile name="RollingFile" fileName="app.log" filePattern="app-%d{yyyy-MM-dd_HH-mm}.log">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+
+            <Policies>
+
+                <TimeBasedTriggeringPolicy interval="2" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>-->
+        <Configuration status="INFO"> <!--4 tipos diferentes de PatternLayout-->
+            <Appenders>
+                <Console name="console" target="SYSTEM_OUT">
+                    <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+                </Console>
+                <File name="File" fileName="log.txt">
+                    <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+                </File>
+                <File name ="File" fileName = "archivo.docx">
+                    <PatternLayout pattern="%d [%t] %-5level: %msg%n"/>
+                </File>
+                <File name = "File" fileName = "archivo2.docx">
+                    <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %highlight{%-5level}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue} %logger{36} - %msg%n"/>
+                </File>
+            </Appenders>
+
+            <Loggers>
+                <Root level="debug">
+                    <AppenderRef ref="console" />
+                    <AppenderRef ref="file"/>
+                </Root>
+                <Logger name="org.example" level="miLogLevel">
+                    <AppenderRef ref="miAppender" />
+                </Logger>
+            </Loggers>
+        </Configuration>
